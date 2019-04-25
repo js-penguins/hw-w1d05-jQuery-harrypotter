@@ -114,4 +114,62 @@ $(document).ready(function(){
 
     For example, a function like createList(title, array).
   */
+ console.log('JS CONNECTED')
+// thought process {Date:4/25/2019} {Time:9:36pm} { need a function that gets all the values of each house passed through.} Cant think of anything else right now.  
+// function getHouse(hogwarts)
+function getHouse(harryHousePoter) {
+  harryHousePoter.houses.forEach(function(HousePoter){
+    var imges = HousePoter.img ;
+    // console.log(imges)
+     var seection = $('<section>');
+    var pTagPic = $('<img></img>').attr("src", imges);
+    $(seection).append(pTagPic);
+    $('main').append(seection);
+    
+    
+    var pTagName = $('<h2>').append(HousePoter.name);
+    $(seection).append(pTagName);
+
+    var pTagFounder =$('<p>').append('founder: '+HousePoter.founder);
+    $(seection).append(pTagFounder);
+    // console.log(i.name)
+    var pTageMascot = $('<p>').append('Mascot: ' + HousePoter.mascot);
+    $(seection).append(pTageMascot);
+    
+    var pTagValue = $('<h3>').append('Value');
+    $(seection).append(pTagValue)
+    // var pTagValues = $('')
+    console.log(HousePoter.values)
+    var ulListValues = $('<ul>');
+    HousePoter.values.forEach(function(i){
+          var nList =  $('<li>').append(i);
+          $(ulListValues).append(nList);
+          $(seection).append(ulListValues);
+    })
+    var pTageColor = $('<h3>').append('Colors')
+    $(seection).append(pTageColor)
+    var ulListColors = $('<ul>');
+    HousePoter.colors.forEach(function(i){
+      var nList =  $('<li>').append(i);
+      $(ulListColors).append(nList);
+      $(seection).append(ulListColors);
+    })
+
+    var pTageStudent = $('<h3>').append('Students')
+    $(seection).append(pTageStudent)
+
+    var ulListStudent = $('<ul>');
+    HousePoter.students.forEach(function(i){
+      var nList =  $('<li>').append(i);
+      $(ulListStudent).append(nList);
+      $(seection).append(ulListStudent);
+    })
+
+  })
+}
+getHouse(hogwarts);
+// console.log(hogwarts.houses)
+
+
+
 })
