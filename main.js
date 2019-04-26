@@ -89,17 +89,6 @@ var hogwarts = {
 
 $(document).ready(function() {
     /* DO YOUR CODE HERE */
-    // var $section = $('<section/>');
-
-    // $('main').append($section);
-    // $($name).text(hogwarts.houses.find(house => house.name == 'Hufflepuff').name)
-    // $($title).text(Object.keys(hogwarts.houses.find(house => house.name == 'Hufflepuff')))
-    // $($text).text(hogwarts.houses.find(house => house.name == 'Hufflepuff').colors)
-
-
-    // var houses = hogwarts.houses.find(function(house) {
-    //     return house.name === 'Griffindor';
-    // });
 
     var houseName = []
     hogwarts.houses.forEach(function(house) {
@@ -146,11 +135,6 @@ $(document).ready(function() {
 
 
 
-    // $($section).append($('<img/>').attr('src', houseImg[0]));
-    // $($name).text(houseName[0])
-    // $($title).text(title[2])
-    // $($text).text(houseValues[0].forEach())
-
     console.log(houseImg)
 
     for (var i = 0; i < houseName.length; i++) {
@@ -188,7 +172,7 @@ $(document).ready(function() {
     $('section').css('flex-direction', 'row');
     $('section').parent().css({ position: 'relative' });
     $('section').css({ 'left': 50, position: 'relative' });
-    // $('section').css('margin', '100');
+
 
 
 
