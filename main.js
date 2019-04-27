@@ -114,4 +114,44 @@ $(document).ready(function(){
 
     For example, a function like createList(title, array).
   */
+ 
+     createSection();
+  function createSection(){
+    for (var i=0;i<hogwarts.houses.length;i++){
+    var $section=$('<section></section>').css('position','relative'); 
+    var img=$('<img></img>');
+    var nameImage=hogwarts.houses[i].img;
+    img.attr('src',nameImage);  
+    $section.append(img);
+    var $nameHouse=$('<h2></h2>').text(hogwarts.houses[i].name);
+    $section.append($nameHouse);
+    var $founderHouse=$('<p></p>').text(hogwarts.houses[i].founder);
+    $section.append($founderHouse);
+    var $moscotHouse=$('<p></p>').text(hogwarts.houses[i].mascot);
+    $section.append($moscotHouse);
+    var $valueHouse=$('<h3></h3>').text("Values");
+    $section.append($valueHouse);
+    $section.append(createList(hogwarts.houses[i].values));
+    $section.append($('<h3></h3>').text("Colors"));
+    $section.append(createList(hogwarts.houses[i].colors)); 
+    $section.append($('<h3></h3>').text("Students"));
+    $section.append(createList(hogwarts.houses[i].students));
+    $('main').append($section);}
+   
+  }
+
+  function createList(array){
+    var title=title;
+    var $list=document.createElement('ul');
+    for (var i=0; i<array.length;i++){
+    var itemList=document.createElement('li');
+    itemList.appendChild(document.createTextNode(array[i]));
+    $list.appendChild(itemList);
+    console.log($list);
+    }
+    return $list;   
+  }
+
+
+
 })
