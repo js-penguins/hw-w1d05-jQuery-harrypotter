@@ -91,6 +91,97 @@ var hogwarts = {
 $(document).ready(function(){
   /* DO YOUR CODE HERE */
 
+
+  var hName = []
+    hogwarts.houses.forEach(function(house)  {
+      hName.push(house.name);
+       });
+      console.log(hName)
+
+  var hFounder = []
+    hogwarts.houses.forEach(function(house)  {
+        hFounder.push(house.founder);
+        });
+        console.log(hFounder)
+
+  var hMascot = []
+    hogwarts.houses.forEach(function(house)  {
+      hMascot.push(house.mascot);
+       });
+      console.log(hMascot)
+  
+  var hValues = []
+      hogwarts.houses.forEach(function(house)  {
+        hValues.push(house.values);
+      });
+        console.log(hValues)    
+
+  var hColor = []
+    hogwarts.houses.forEach(function(house)  {
+      hColor.push(house.colors);
+      });
+        console.log(hColor)
+
+  var hStudents = []
+    hogwarts.houses.forEach(function(house)  {
+      hStudents.push(house.students);
+        });
+          console.log(hStudents)  
+  
+  var hImg = []
+    hogwarts.houses.forEach(function(house)  {
+      hImg.push(house.img);
+        });
+          console.log(hImg) 
+
+  var title = Object.keys(hogwarts.houses[0])   
+     
+  for(var i = 0; i < hName.length; i++){
+    var $newSec = $('<section>');
+    $('main').append($newSec);
+    var $newDiv = $('<div>');
+
+    $($newSec).append($newDiv);
+    $($newDiv).append($('<img/>').attr('src',hImg[i]));
+    $($newDiv).append($('<h2/>').html(hName[i]));
+    $($newDiv).append($('<p/>').html(title[5]+':'+hFounder[i]));
+    $($newDiv).append($('<p/>').html(title[3]+':'+hMascot[i]));
+    $($newDiv).append($('<h3/>').html(title[2]));
+
+  var $ulListValue = $('<ul/>')
+    for (var j=0; j<hValues[i].length; j++) {
+      $($ulListValue).append($('<li/>').html(hValues[i][j]));
+    } 
+    $($newDiv).append($ulListValue);
+
+    $($newDiv).append($('<h3/>').html(title[4]));
+
+  var $ulListColor = $('<ul/>')
+    for (var j=0; j<hColor[i].length; j++) {
+        $($ulListColor).append($('<li/>').html(hColor[i][j]));
+      } 
+      $($newDiv).append($ulListColor);     
+  
+      $($newDiv).append($('<h3/>').html(title[6]));
+
+  var $ulListStudents = $('<ul/>')
+    for (var j=0; j<hStudents[i].length; j++) {
+        $($ulListStudents).append($('<li/>').html(hStudents[i][j]));
+        } 
+        $($newDiv).append($ulListStudents); 
+      }  
+  
+
+
+  
+  
+  
+  
+  
+  
+ })
+
+
   // Guidance:  (Feel free to ignore this).
 
   /* Look at the image of the goal in the README!  What do you see?
@@ -101,6 +192,8 @@ $(document).ready(function(){
     1.  Access the array that belongs to the 'Houses' key of the object.
     2.  Create a function 'renderHouse' that renders a single house.
     3.  Call that function on each house in the array.
+
+    
 
     This is going to be a big function.  It has to go through a lot of the 
     different values in the house object, loop through some of the arrays
@@ -114,4 +207,10 @@ $(document).ready(function(){
 
     For example, a function like createList(title, array).
   */
-})
+
+
+
+
+
+
+
