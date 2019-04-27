@@ -101,7 +101,38 @@ $(document).ready(function(){
     1.  Access the array that belongs to the 'Houses' key of the object.
     2.  Create a function 'renderHouse' that renders a single house.
     3.  Call that function on each house in the array.
+    */
 
+    
+  //  $('body').append('<ul/>');
+
+  //  for (var i=0; i<hogwarts.houses.length ; i++)
+  //  {
+  //   $('ul').append('<li/>');
+  //  }
+  //  for (var i=0; i<hogwarts.houses.length ; i++)
+  //  {
+  //   //$('li')[i].append(hogwarts.houses[i].img);
+  //   $('li')[i].append(hogwarts.houses[i].name);
+  //   $('li')[i].append(hogwarts.houses[i].founder);
+  //   $('li')[i].append(hogwarts.houses[i].mascot);
+  //  }
+  //  for ( var i=0; i<hogwarts.houses.values.length; i++){
+  //   $('li')[i].append(hogwarts.houses[i].values);
+  //  }
+  
+  
+  for (var i=0; i<hogwarts.houses.length ; i++)
+   {
+    //$('li')[i].append(hogwarts.houses[i].img);
+    var createSection = $('main').append('<section></section>');
+    createSection.append(hogwarts.houses[i].name);
+    createSection.append(hogwarts.houses[i].founder);
+    createSection.append(hogwarts.houses[i].mascot);
+   }
+
+   
+    /*
     This is going to be a big function.  It has to go through a lot of the 
     different values in the house object, loop through some of the arrays
     inside each house objects.  For example, loop through each houses 'students',
