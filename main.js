@@ -90,6 +90,60 @@ var hogwarts = {
 
 $(document).ready(function(){
   /* DO YOUR CODE HERE */
+  
+  function getHouses(harryPotterHouses){
+    harryPotterHouses.houses.forEach(function(house){
+      var imgs= house.img;
+      var section=$('<section>');
+      section.css({'margin': '0 auto'});
+      var pic=$('<img/>').attr('src',imgs)
+      $('main').append(section);
+      section.append(pic);
+      section.css('float textAlign', 'left center');
+
+      var name=house.name;
+      var h2=$('<h2>');
+
+      section.append(h2);
+      h2.append(name);
+      
+      
+      section.append('<p>').append('founder: '+house.founder);
+      section.append('<p>').append('mascot: '+house.mascot);
+     
+      var value=$('<h3>').css('fontWeight', 'bold');
+      section.append(value);
+      value.append('Values: ').css('margin','20px');
+      
+     for(var i=0; i<house.values.length;i++){
+       var item=house.values[i];
+       var li=section.append($('<li>')).append(item);
+      li.css('listStyle','none');
+     }
+      
+     var color=$('<h3>').css('fontWeight', 'bold');
+     section.append(color);
+     color.append('colors: ').css('margin','20px');
+
+     for(var i=0; i<house.colors.length;i++){
+      var item=house.colors[i];
+      var li=section.append($('<li>')).append(item);
+     li.css('listStyle','none');
+    }
+
+    var student=$('<h3>').css('fontWeight', 'bold');
+     section.append(student);
+     student.append('Students: ').css('margin','20px');
+
+     for(var i=0; i<house.students.length;i++){
+      var item=house.students[i];
+      var li=section.append($('<li>')).append(item);
+     li.css('listStyle','none');
+    }
+    })
+
+  }
+  getHouses(hogwarts);
 
   // Guidance:  (Feel free to ignore this).
 
