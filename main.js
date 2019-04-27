@@ -90,11 +90,85 @@ var hogwarts = {
 
 $(document).ready(function(){
   /* DO YOUR CODE HERE */
+  
 
+  // creating calback functions for each proprety
+  var buildingName = []
+  hogwarts.houses.forEach(function(building){
+    buildingName.push(building.name);
+  })
+  var buildinFounder = []
+  hogwarts.houses.forEach(function(building){
+    buildinFounder.push(building.founder);
+  })
+  var buildinMascot = []
+  hogwarts.houses.forEach(function(building){
+    buildinMascot.push(building.mascot);
+  })
+  var buildinValue = []
+  hogwarts.houses.forEach(function(building){
+    buildinValue.push(building.values);
+  })
+  var buildinColor = []
+  hogwarts.houses.forEach(function(building){
+    buildinColor.push(building.colors);
+  })
+  var studentName = []
+  hogwarts.houses.forEach(function(building){
+    studentName.push(building.students);
+  })
+  var buildingImg = []
+  hogwarts.houses.forEach(function(building){
+    buildingImg.push(building.img);
+  })
+
+  // select elements, create and append (sections, divs, h2, p, h3, img)
+  var title = Object.keys(hogwarts.houses[0])
+  
+  for (var i = 0; i < buildingName.length; i++) {
+    var $htmlSection = $('<section/>');
+    $('main').append($htmlSection);
+    var $htmlDiv = $('<div/>');
+    $($htmlSection).append($htmlDiv);
+      $($htmlDiv).append($('<img/>').attr('src', buildingImg[i])); 
+      $($htmlDiv).append($('<h2/>').html(buildingName[i]));
+      $($htmlDiv).append($('<p/>').html(title[5] + ': ' + buildinFounder[i]))
+      $($htmlDiv).append($('<p/>').html(title[3] + ': ' + buildinMascot[i]))
+      $($htmlDiv).append($('<h3/>').html(title[2]));
+  
+      var $ulListValue = $('<ul/>')
+      for (var j = 0; j < buildinValue[i].length; j++) {
+        $($ulListValue).append($('<li/>').html(buildinValue[i][j]));
+      }
+      $($htmlDiv).append($ulListValue);
+  
+      var $ulListColor = $('<ul/>')
+      $($htmlDiv).append($('<h3/>').html(title[4]));
+      for (var t = 0; t < buildinColor[i].length; t++) {
+        $($ulListColor).append($('<li/>').html(buildinColor[i][t]));
+      }
+      $($htmlDiv).append($ulListColor);
+  
+      var $ulListStudent = $('<ul/>')
+      $($htmlDiv).append($('<h3/>').html(title[6]));
+      for (var m = 0; m < studentName[i].length; m++) {
+        $($ulListStudent).append($('<li/>').html(studentName[i][m]));
+      }
+      $($htmlDiv).append($ulListStudent);
+  }
+
+  //  css styleing......
+  $('div').css({ 'left': 15, position :'relative'});
+  $('ul').css({'background': '#F5F5F5'});
+  $('p').css({'font-size': '100%'});
+  $('h2').css({'font-size': '90%'});
+  $('h3').css({'font-size': '90%'});
+  $('li').css({'font-size': '90%'});
+  $('img').css({'max-width': '65%'});
   // Guidance:  (Feel free to ignore this).
 
   /* Look at the image of the goal in the README!  What do you see?
-    You can tell that we need to create identical sections for each house that
+    You can tell that we need to create identical sections for forEach house that
     that has the same information inside.
 
     One approach could be:
