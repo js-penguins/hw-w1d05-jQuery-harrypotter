@@ -88,30 +88,58 @@ var hogwarts = {
   ]
 }
 
-$(document).ready(function(){
-  /* DO YOUR CODE HERE */
 
-  // Guidance:  (Feel free to ignore this).
-
-  /* Look at the image of the goal in the README!  What do you see?
-    You can tell that we need to create identical sections for each house that
-    that has the same information inside.
-
-    One approach could be:
-    1.  Access the array that belongs to the 'Houses' key of the object.
-    2.  Create a function 'renderHouse' that renders a single house.
-    3.  Call that function on each house in the array.
-
-    This is going to be a big function.  It has to go through a lot of the 
-    different values in the house object, loop through some of the arrays
-    inside each house objects.  For example, loop through each houses 'students',
-    'colors' and 'values' to render all the elements inside their arrays.
-
-    Optional:  we are looping through arrays three times.  Is there a way
-    to make this more DRY and more scalable by turning those loops into a 
-    separate function?  You would then call this function on the 
-    'students', 'colors' and 'values' arrays.
-
-    For example, a function like createList(title, array).
-  */
-})
+ $(document).ready(function(){
+  
+  function renderHouse(house) {
+    
+    house.houses.forEach(function(info){
+      var imge = info.img ;
+      var seection = $('<section>');
+      var pic = $('<img/>').attr("src", imge);
+      $(seection).append(pic);
+      
+      $('main').append(seection);
+    
+      var nameH = $('<h2>').append(info.name);
+      $(seection).append(nameH);
+  
+      var founderH = $('<p>').append(info.founder);
+      $(seection).append(founderH);
+  
+      var mascotH = $('<p>').append(info.mascot);
+      $(seection).append(mascotH);
+  
+      var value = $('<h3>').append('Value');
+      $(seection).append(value)
+  
+      var ul = $('<ul>');
+      info.values.forEach(function(n){
+      var li = $('<li>').append(n);
+      $(ul).append(li);
+      $(seection).append(ul);
+      })
+    
+      var colorH = $('<h3>').append('Colors')
+      $(seection).append(colorH)
+      var ul = $('<ul>');
+      info.colors.forEach(function(n){
+      var li = $('<li>').append(n);
+      $(ul).append(li);
+      $(seection).append(ul);
+      })
+    
+      var studentH = $('<h3>').append('Students')
+      $(seection).append(studentH)
+  
+      var ul = $('<ul>');
+      info.students.forEach(function(n){
+      var li = $('<li>').append(n);
+      $(ul).append(li);
+      $(seection).append(ul);
+      })
+  
+      })
+      } renderHouse(hogwarts);
+  
+      })
