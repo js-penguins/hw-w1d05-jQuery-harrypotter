@@ -35,7 +35,7 @@ Each house needs to have:
 * The students of the house
 
 All of which come from the `hogwarts` object in `main.js` file provided.
-
+<!-- 
 ### Easy Bonus: Styling
 
 Don't worry about styling, but if you want it to look like the image above, you can use the provided `style.css`.  To use the provided styles:
@@ -44,4 +44,4 @@ Don't worry about styling, but if you want it to look like the image above, you 
 * the name of the house should be in a `h2` tag
 * the founder and the mascot should be in `p` tags
 * each title (like 'values', 'colors', 'students') are an `h3` tag
-* each of the items that go with titles are `li` tags inside of a `ul` tag.
+* each of the items that go with titles are `li` tags inside of a `ul` tag. -->

@@ -87,8 +87,6 @@ var hogwarts = {
     }
   ]
 }
-
-$(document).ready(function(){
   /* DO YOUR CODE HERE */
 
   // Guidance:  (Feel free to ignore this).
@@ -97,7 +95,7 @@ $(document).ready(function(){
     You can tell that we need to create identical sections for each house that
     that has the same information inside.
 
-    One approach could be:
+    One approach could be: 
     1.  Access the array that belongs to the 'Houses' key of the object.
     2.  Create a function 'renderHouse' that renders a single house.
     3.  Call that function on each house in the array.
@@ -114,4 +112,77 @@ $(document).ready(function(){
 
     For example, a function like createList(title, array).
   */
+ $(document).ready(function(){
+
+$(document).ready(function() {
+ 
+  var HName = []
+  hogwarts.houses.forEach(function(house) {
+      HName.push(house.name);})
+  console.log(HName)
+
+  var HColor = []
+  hogwarts.houses.forEach(function(house) {
+      HColor.push(house.colors);})
+  console.log(HColor)
+
+  var HColor = []
+  hogwarts.houses.forEach(function(house) {
+      HColor.push(house.values);})
+  console.log(HColor)
+
+  var HMascot = []
+  hogwarts.houses.forEach(function(house) {
+      HMascot.push(house.mascot);})
+  console.log(HMascot)
+
+  var HFounder = []
+  hogwarts.houses.forEach(function(house) {
+      HFounder.push(house.founder);})
+  console.log(HFounder)
+
+  var HStudent = []
+  hogwarts.houses.forEach(function(house) {
+      HStudent.push(house.students);})
+  console.log(HStudent)
+
+  var HImg = []
+  hogwarts.houses.forEach(function(house) {
+      HImg.push(house.img);})
+  var title = Object.keys(hogwarts.houses[0]) 
+  console.log(HImg)
+
+  for (var i = 0; i < HName.length; i++) {
+      var $section = $('<section/>');
+      $('main').append($section);
+      var $houseDiv = $('<div/>');
+
+      $($section).append($houseDiv);
+      $($houseDiv).append($('<img/>').attr('src', HImg[i]));
+      $($houseDiv).append($('<h2/>').html(HName[i]));
+      $($houseDiv).append($('<p/>').html(title[5] + ': ' + HFounder[i]))
+      $($houseDiv).append($('<p/>').html(title[3] + ': ' + HMascot[i]))
+      $($houseDiv).append($('<h3/>').html(title[2]));
+
+      var $ulListValue = $('<ul/>')
+      for (var j = 0; j < HColor[i].length; j++) {
+        $($ulListValue).append($('<li/>').html(HColor[i][j]));}
+      $($houseDiv).append($ulListValue);
+
+      var $ulListColor = $('<ul/>')
+      $($houseDiv).append($('<h3/>').html(title[4]));
+      for (var k = 0; k < HColor[i].length; k++) {
+        $($ulListColor).append($('<li/>').html(HColor[i][k]));}
+      $($houseDiv).append($ulListColor);
+
+      var $ulListStudent = $('<ul/>')
+      $($houseDiv).append($('<h3/>').html(title[6]));
+      for (var c = 0; c < HStudent[i].length; c++) {
+        $($ulListStudent).append($('<li/>').html(HStudent[i][c]));}
+      $($houseDiv).append($ulListStudent);}
+
+  $('section').css('flex-direction', 'row');
+  $('section').parent().css({position : 'relative'});
+  $('section').css({ 'left': 50, position :'relative'});  
+ })
 })
