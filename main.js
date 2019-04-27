@@ -132,7 +132,16 @@ $(document).ready(function() {
     })
     var title = Object.keys(hogwarts.houses[0])
 
+    for (var i = 0; i < title.length; i++) {
+        var word = title[i].toLowerCase().split("");
+        for (var j = 0; j < title[i].length; j = j + 1) {
+            word[j] = word[j].toUpperCase();
+            title[i] = word.join('')
+            console.log(title[i])
+            break
 
+        }
+    }
 
 
     console.log(houseImg)
