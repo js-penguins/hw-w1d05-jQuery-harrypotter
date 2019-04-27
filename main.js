@@ -113,5 +113,58 @@ $(document).ready(function(){
     'students', 'colors' and 'values' arrays.
 
     For example, a function like createList(title, array).
+
+
+
+
   */
-})
+
+ 
+ var main =$('main')
+
+ var sections = $('<section/>')
+ var ul = $('<ul/>')
+ var div = $('<div/>')
+ main.append(sections)
+ sections.append(div)
+ div.append(ul)
+
+ 
+ function renderHouse (){
+ 
+  for (i=0 ; i<hogwarts.houses.length ; i++){
+    var house = hogwarts.houses[i];
+    var $img = $('<img/>').attr('src' , house.img)
+    var $name = $('<h2/>').text(house.name)
+    var $founder = $('<p/>').text('founder: ' + house.founder)
+    var $mascot = $('<p/>').text('mascot: ' + house.mascot)
+    var $values = $('<h3/>').text('Values ')
+    var $valuesText = $('<p/>').text(house.values.join("\r\n"))
+    var $colors = $('<h3/>').text('Colors ')
+    var $colorsText =  $('<p/>').text(house.colors.join("\r\n"))
+    var $students = $('<h3/>').text('Students ')
+    var $studentsText = $('<p/>').text(house.students.join("\r\n"))
+    
+   
+  ul.append($img)
+  ul.append($name)
+  ul.append($founder)
+  ul.append($mascot)
+  ul.append($values)
+  ul.append($valuesText)
+    ul.append($colors)
+    ul.append($colorsText)
+    ul.append($students)
+    ul.append($studentsText)
+   
+  }
+
+  }
+  
+  renderHouse();
+
+
+
+
+});
+
