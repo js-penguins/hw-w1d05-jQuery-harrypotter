@@ -137,14 +137,11 @@ $(document).ready(function() {
         for (var j = 0; j < title[i].length; j = j + 1) {
             word[j] = word[j].toUpperCase();
             title[i] = word.join('')
-            console.log(title[i])
             break
 
         }
     }
 
-
-    console.log(houseImg)
 
     for (var i = 0; i < houseName.length; i++) {
         var $section = $('<section/>');
