@@ -114,4 +114,55 @@ $(document).ready(function(){
 
     For example, a function like createList(title, array).
   */
+  var main = $('main');
+
+    function renderHouse(Houses)
+  {
+    var newSection = $('<section></section>');
+    
+    var newImg = $('<img>').attr('src',Houses.img) ;
+    newSection.append(newImg);
+
+    var newName = $('<h2>').text(Houses.name) ;
+    newSection.append(newName);
+
+    var newFounder = $('<p>').text('founder: ' + Houses.founder);
+    newSection.append(newFounder);
+
+    var newMascot = $('<p>').text('Mascot: ' + Houses.mascot);
+    newSection.append(newMascot);
+
+    var newValueName = $('<h3>').text('Values') ;
+    newSection.append(newValueName);
+    
+    Houses.values.forEach(function(value){
+      var newValue = $('<ul>').append($('<li>').text(value));
+      newSection.append(newValue);
+    });
+
+    var newColorName = $('<h3>').text('Colors') ;
+    newSection.append(newColorName);
+
+    Houses.colors.forEach(function(color){
+      var newColor = $('<ul>').append($('<li>').text(color));
+      newSection.append(newColor);
+    });
+
+    var newStudentName = $('<h3>').text('Students') ;
+    newSection.append(newStudentName);
+
+    Houses.students.forEach(function(student){
+      var newStudent = $('<ul>').append($('<li>').text(student));
+      newSection.append(newStudent);
+    });
+
+    main.append(newSection);
+
+
+
+  
+  }
+  hogwarts.houses.forEach(renderHouse);
+    
+  
 })
