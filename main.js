@@ -121,15 +121,54 @@ $(document).ready(function(){
   //   $('li')[i].append(hogwarts.houses[i].values);
   //  }
   
+  var createH2 = $('<h2>');
   
-  for (var i=0; i<hogwarts.houses.length ; i++)
-   {
-    //$('li')[i].append(hogwarts.houses[i].img);
-    var createSection = $('main').append('<section></section>');
-    createSection.append(hogwarts.houses[i].name);
-    createSection.append(hogwarts.houses[i].founder);
-    createSection.append(hogwarts.houses[i].mascot);
-   }
+  var createP = $('<p>');
+  for(var i=0; i<hogwarts.houses.length; i++){
+    var createSection = $('<section>'); 
+    $('main').append(createSection);
+    var houseImg = $('<img src="'+(hogwarts.houses[i].img)+'"/>');
+    createSection.append(houseImg);
+      var houseName = createH2.text(hogwarts.houses[i].name.toLocaleUpperCase());
+      createSection.append(houseName.text());
+      var houseFounder = createP.text("<br/> founder: "+hogwarts.houses[i].founder);
+      createSection.append(houseFounder.text());
+      var houseMascot = createP.text("<br/> mascot: "+hogwarts.houses[i].mascot);
+      createSection.append(houseMascot.text());
+      var createH3 = $('<h3>');
+      createH3.text("values ");
+      createSection.append(createH3);
+      for(var M=0; M<hogwarts.houses[i].values.length; M++){
+        var houseValues = createP.text(hogwarts.houses[i].values[M]);
+        createSection.append(" <br/>"+houseValues.text());
+      }
+      var createH3 = $('<h3>');
+      createH3.text("Colors ");
+      createSection.append(createH3);
+      for(var j=0; j<hogwarts.houses[i].colors.length; j++){
+        var houseColors = createP.text(hogwarts.houses[i].colors[j]);
+        createSection.append(" <br/>"+houseColors.text());
+      }
+      var createH3 = $('<h3>');
+      createH3.text("Students ");
+      createSection.append(createH3);
+      for(var k=0;k<hogwarts.houses[i].students.length; k++){
+        var houseStudents = createP.text(hogwarts.houses[i].students[k]);
+        createSection.append(" <br/>"+houseStudents.text());
+      }
+  } 
+  // for(var i=0; i<hogwarts.houses.colors.length; i++){
+  //   var housColors = createP.text(hogwarts.houses.colors[i]);
+  //   console.log(housColors);
+  // }
+  // for (var i=0; i<hogwarts.houses.length ; i++)
+  //  {
+  //   //$('li')[i].append(hogwarts.houses[i].img);
+  //   var createSection = $('main').append('<section></section>');
+  //   createSection.append(hogwarts.houses[i].name);
+  //   createSection.append(hogwarts.houses[i].founder);
+  //   createSection.append(hogwarts.houses[i].mascot);
+   
 
    
     /*
