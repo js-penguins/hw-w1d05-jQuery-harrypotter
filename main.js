@@ -90,8 +90,43 @@ var hogwarts = {
 
 $(document).ready(function(){
   /* DO YOUR CODE HERE */
+  
+  var $main = $('main');
 
-  // Guidance:  (Feel free to ignore this).
+  function renderHouse(house){
+   
+    var $houseSection = $('<section>'),
+    $houseImg = $('<img>').attr('src', house.img),
+    $houseName = $('<h2>').text(house.name),
+    $founder = $('<p>').text('founder: ' + house.founder),
+    $mascot = $('<p>').text('mascot: ' + house.mascot);
+    $houseSection.append($houseImg, $houseName, $founder, $mascot);
+
+    var allHouseKeys = Object.keys(house);
+    for(var i = 2; i <  allHouseKeys.length; i+=2) {
+     
+      newList(toCapitalFirstLetter(allHouseKeys[i]), house[allHouseKeys[i]], $houseSection)
+    }
+    $main.append($houseSection);
+  }
+
+  function newList(title, array, $housesection) {
+    var $title = $('<h3>').text(title);
+    var $list = $('<ul>')
+    array.forEach(function(x) {
+      $list.append($('<li>').text(x));
+    })
+    $housesection.append($title, $list);
+  }
+
+  function toCapitalFirstLetter(word) {
+    var first = word.charAt(0).toUpperCase();
+    var other = word.slice(1);
+    return (first + other);
+  }
+ 
+  hogwarts.houses.forEach(renderHouse); 
+
 
   /* Look at the image of the goal in the README!  What do you see?
     You can tell that we need to create identical sections for each house that
