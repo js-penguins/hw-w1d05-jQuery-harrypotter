@@ -132,24 +132,24 @@ hogwarts.houses.forEach(function(Student){
   Students.push(Student.students)
 })
 console.log(Students)
+var title= Object.keys(hogwarts.houses[0])
 
-for(i=0; i<Names.length; i++)
+for(i=0; i<Names.length; i++){
 var $Section=$("<section/>")
 $("main").append($Section)
 var DivHouse=$("<div/>")
-Section.append($DivHouse)
-DivHouse.append("<img/>").atter("src",Images[i])
+$Section.append(DivHouse)
+DivHouse.append($("<img/>").attr("src",Images[i]))
 DivHouse.append("<h2/>").html(Names[i])
 DivHouse.append("<p/>").html(title[5]+" "+Founders[i])
 DivHouse.append("<p/>").html(title[3]+" "+Mascots[i])
-DivHouse.append("<h3/>").html(title[3]+" "+Mascots[i])
 DivHouse.append("<h3/>").html(title[2])
 
 var $ListValue=$("<ul/>")
 for(var j=0; j<Values[i].length; j++){
-  ListValue.append("<li/>").html(Values[i][j])
+  $ListValue.append("<li/>").html(Values[i][j])
 }
-DivHouse.append(ListValue)
+DivHouse.append($ListValue)
 
 var listColor=$("<ul/>")
 DivHouse.append("<h3/>").html(title[4])
@@ -161,9 +161,9 @@ DivHouse.append(listColor)
 var $listStudent=$("<ul/>")
 DivHouse.append("<h3/>").html(title[6])
 for(var h=0; h<Students[i].length; h++){
-  listStudent.append("<li/>").html(Students[i][h])
+  $listStudent.append("<li/>").html(Students[i][h])
 }
-DivHouse.append(listStudent)
+DivHouse.append($listStudent)}
 
 $('section').css('flex-direction', 'row');
 $('section').parent().css({position : 'relative'});
