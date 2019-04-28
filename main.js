@@ -90,12 +90,91 @@ var hogwarts = {
 
 $(document).ready(function(){
   /* DO YOUR CODE HERE */
+var Names=[]
+hogwarts.houses.forEach(function(Name){
+  Names.push(Name.name)
+})
+console.log(Names)
+    
+var Images=[]
+hogwarts.houses.forEach(function(Image){
+  Images.push(Image.img)
+})
+console.log(Images)
 
+var Values=[]
+hogwarts.houses.forEach(function(Value){
+  Values.push(Value.values)
+})
+console.log(Values)
+
+
+var Mascots=[]
+hogwarts.houses.forEach(function(Mascot){
+  Mascots.push(Mascot.mascot)
+})
+console.log(Mascots)
+
+var Colors=[]
+hogwarts.houses.forEach(function(Color){
+  Colors.push(Color.colors)
+})
+console.log(Colors)
+
+var Founders=[]
+hogwarts.houses.forEach(function(Founder){
+  Founders.push(Founder.founder)
+})
+console.log(Founders)
+
+var Students=[]
+hogwarts.houses.forEach(function(Student){
+  Students.push(Student.students)
+})
+console.log(Students)
+
+for(i=0; i<Names.length; i++)
+var $Section=$("<section/>")
+$("main").append($Section)
+var DivHouse=$("<div/>")
+Section.append($DivHouse)
+DivHouse.append("<img/>").atter("src",Images[i])
+DivHouse.append("<h2/>").html(Names[i])
+DivHouse.append("<p/>").html(title[5]+" "+Founders[i])
+DivHouse.append("<p/>").html(title[3]+" "+Mascots[i])
+DivHouse.append("<h3/>").html(title[3]+" "+Mascots[i])
+DivHouse.append("<h3/>").html(title[2])
+
+var $ListValue=$("<ul/>")
+for(var j=0; j<Values[i].length; j++){
+  ListValue.append("<li/>").html(Values[i][j])
+}
+DivHouse.append(ListValue)
+
+var listColor=$("<ul/>")
+DivHouse.append("<h3/>").html(title[4])
+for(var k=0; i<Colors[i].length; k++){
+  listColor.append("<li/>").html(Colors[i][k])
+}
+DivHouse.append(listColor)
+
+var $listStudent=$("<ul/>")
+DivHouse.append("<h3/>").html(title[6])
+for(var h=0; h<Students[i].length; h++){
+  listStudent.append("<li/>").html(Students[i][h])
+}
+DivHouse.append(listStudent)
+
+$('section').css('flex-direction', 'row');
+$('section').parent().css({position : 'relative'});
+$('section').css({ 'left': 50, position :'relative'});
   // Guidance:  (Feel free to ignore this).
 
   /* Look at the image of the goal in the README!  What do you see?
     You can tell that we need to create identical sections for each house that
-    that has the same information inside.
+    has the same information inside.
+
+    
 
     One approach could be:
     1.  Access the array that belongs to the 'Houses' key of the object.
